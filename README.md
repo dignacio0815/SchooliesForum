@@ -71,7 +71,12 @@ To access the database: `docker run -p 8081:8080 -e ADMINER_DEFAULT_SERVER=mysql
     - Post information
 
 ## Mockups
-![Home and Create](public/img/mockup-home-create.png)
-![Login and Landing](public/img/mockup-login-landing.png)
-![Profile-Cart](public/img/mockup-profile-cart.png)
-![Product](public/img/mockup-product.png)
+![Sign Up Screen](public/img/signUpScreen.jpg)
+![Home Before Login](public/img/homePageBeforeLogin.jpg)
+![Home After Login](public/img/homePageAfterLogin.jpg)
+![Followers Screen](public/img/followersScreen.jpg)
+![Followers Screen](public/img/followersScreen.jpg)
+![Likes Screen](public/img/likesScreen.jpg)
+![Login Screen](public/img/loginScreen.jpg)
+![Retweet Screen](public/img/retweetScreen.jpg)
+![Settings Screen](public/img/settingsScreen.jpg)
