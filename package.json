@@ -1,7 +1,7 @@
 {
   "name": "schooliesforum",
   "version": "1.0.0",
-  "description": "",
+  "description": "> The information below includes items from the project prompt\r ## Motivation\r Use the agile process to research, develop, deploy, and present a full stack webstore.  This is intended to give students the experience of designing and deploying a website while researching and learning new information. In addition,it gives students an opportunity to develop proficiency with the technology of their choicewhich will hopefully instill a sense of pride and accomplishment... wait...",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
