@@ -1,0 +1,71 @@
+<%- include ('partials/header'); -%>
+
+
+    <div class="container">
+        
+        <div class="jumbotron">
+            
+            <img height="200px" src="/img/profilepic.jpg" style="margin-left: 40%">
+            
+            <br/>
+            
+            <form action='/account' method='POST'>
+                
+                
+                <div class='form-group row'>
+                  <div class='col-sm-2'></div>
+                  <label for='username' class='col-sm-2 col-form-label'>First Name</label>
+               <div class='col-sm-4'>
+                  <input type='text' class='form-control' id='firstname' name='lastname' placeholder='First Name' required>
+                 </div>
+               </div>
+               
+               <div class='form-group row'>
+                  <div class='col-sm-2'></div>
+                  <label for='username' class='col-sm-2 col-form-label'>Last Name</label>
+               <div class='col-sm-4'>
+                  <input type='text' class='form-control' id='lastname' name='lastname' placeholder='Last Name' required>
+                 </div>
+               </div>
+               
+               <div class='form-group row'>
+                  <div class='col-sm-2'></div>
+                  <label for='username' class='col-sm-2 col-form-label'>User-Name</label>
+               <div class='col-sm-4'>
+                  <input type='text' class='form-control' id='username' name='username' placeholder='User-Name' required>
+                 </div>
+               </div>
+               
+               <div class='form-group row'>
+                  <div class='col-sm-2'></div>
+                  <label for='username' class='col-sm-2 col-form-label'>Bio</label>
+               <div class='col-sm-4'>
+                  <input type='text' class='form-control' id='bio' name='bio' placeholder='bio' required>
+                 </div>
+               </div>
+		
+    			<div class='form-group row'>
+    			    <div class='col-sm-2'></div>
+    				<label for='password' class='col-sm-2 col-form-label'>Password</label>
+    				<div class='col-sm-4'>
+    					<input type='password' class='form-control' id='password' name='password' placeholder='****' required>
+    				</div>
+    			</div>
+    		
+				<div class='form-group row'>
+					<div class='col-sm-4'></div>
+					<div class='col-sm-4'>
+						<button class='btn btn-primary btn-block'>Update</button>
+					</div>
+					<div class='col-sm-4'></div>
+				</div>
+	</form>
+            
+        </div>
+        
+        
+    </div>
+
+
+
+<%- include ('partials/footer'); -%>
