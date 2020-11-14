@@ -11,9 +11,9 @@ For this project teams of 3-4 students will design and implement a webstore usin
 [Schoolies Web Forum Project Board](https://github.com/dignacio0815/SchooliesForum/projects/1)
 
 ## Running the App
-To run the app: `nodemon ./bin/wwww`
-
-To access the database: `docker run -p 8081:8080 -e ADMINER_DEFAULT_SERVER=mysql adminer`
+- Install the necessary Node packages: `npm install`
+- To run the app: `node app.js`
+- To access the database: `docker run -p 8081:8080 -e ADMINER_DEFAULT_SERVER=mysql adminer`
 
 ## You will be graded on the following:
 
