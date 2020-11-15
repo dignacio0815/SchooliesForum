@@ -1,0 +1,42 @@
+<%- include('partials/header')%>
+<div class ="container">
+    <form id="register" action="/register" method="POST">
+        <h1>Register</h1>
+        <br>
+        <p>
+            <label>First Name: </label>
+            <input type = "text" placeholder="Enter First Name" name="fName">
+        </p>
+        <p>
+            <label>Last Name: </label>
+            <input type = "text" placeholder="Enter Last Name" name="lName">
+        </p>
+        <p>
+            <label>Username: </label>
+            <input type = "text" placeholder="Enter Username" name="username">
+        </p>
+        <p>
+            <label>Password: </label>
+            <input type = "text" placeholder="Enter Password" name="psw">
+        </p>
+        <p>
+            <label for="University">Pick University</label>
+            <select>
+                <option value="Freshman">Freshman</option>
+                <option value="Sophomore">sophomore</option>
+                <option value="Junior">Junior</option>
+                <option value="Senior">Senior</option>
+            </select>
+        </p>
+        <p>
+            <label for="Grade">Pick Grade</label>
+            <select name="Grade" id="sGrade">
+                <option value="Freshman">Freshman</option>
+                <option value="Sophomore">sophomore</option>
+                <option value="Junior">Junior</option>
+                <option value="Senior">Senior</option>
+            </select>
+        </p>
+        <button id="btn" type="submit">Register</button>
+    </form>
+</div>
