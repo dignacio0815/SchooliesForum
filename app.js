@@ -7,6 +7,7 @@ let port = process.env.PORT || 3000;
 
 // Router Setup
 let indexRouter = require('./routes/index');
+let errorRouter = require('./routes/error');
 let loginRouter = require('./routes/login');
 let accountRouter = require('./routes/account');
 
@@ -20,6 +21,7 @@ app.set('view engine', 'ejs');
 
 
 app.use('/', indexRouter);
+app.use('*', errorRouter);
 app.use('/login', loginRouter);
 app.use('/account', accountRouter);
 
