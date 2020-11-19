@@ -11,6 +11,7 @@ let errorRouter = require('./routes/error');
 let loginRouter = require('./routes/login');
 let accountRouter = require('./routes/account');
 let userRouter = require('./routes/user');
+let createPostRouter = require('./routes/createPost');
 
 app.use(express.static('public'));
 app.use(express.static(__dirname + '/public'));
@@ -22,11 +23,17 @@ app.set('view engine', 'ejs');
 
 
 app.use('/', indexRouter);
+<<<<<<< HEAD
 app.use('/login', loginRouter);
 app.use('/account', accountRouter);
 app.use('/user/:username', userRouter);
 app.use('*', errorRouter);
 
+=======
+//app.use('*', errorRouter);
+app.use('/login', loginRouter);
+app.use('/createPost', createPostRouter);
+>>>>>>> f46c1e0841ac53237530a7993f5357f588cc0eb2
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
