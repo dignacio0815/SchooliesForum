@@ -1,0 +1,13 @@
+<%- include('partials/header') -%>
+    <div class="wrapper">
+        <div class="formContentCreatePost">
+            <div class="postUsername">
+                <label>Hi! Username</label>
+            </div>
+            <form method="POST" action="/createPost">
+                <input type="text" id="title" name="title" placeholder="Enter title">
+                <input type="text" id="description" name="post" placeholder="Enter your Schoolies post here!">
+                <input type="submit" class="btn btn-primary btn-block" value="Post">
+            </form>
+        </div>
+    </div>

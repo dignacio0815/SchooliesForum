@@ -6,8 +6,9 @@ let port = process.env.PORT || 3000;
 
 // Router Setup
 let indexRouter = require('./routes/index');
-//let errorRouter = require('./routes/error');
+// let errorRouter = require('./routes/error');
 let loginRouter = require('./routes/login');
+let createPostRouter = require('./routes/createPost');
 
 app.use(express.static('public'));
 app.use(express.static(__dirname + '/public'));
@@ -19,6 +20,7 @@ app.set('view engine', 'ejs');
 app.use('/', indexRouter);
 //app.use('*', errorRouter);
 app.use('/login', loginRouter);
+app.use('/createPost', createPostRouter);
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
