@@ -33,6 +33,9 @@
                   <label for='username' class='col-sm-2 col-form-label'>User-Name</label>
                <div class='col-sm-4'>
                   <input type='text' class='form-control' id='username' name='username' placeholder='User-Name' required>
+          			<% if(username_taken) { %>
+							<p style="color:red;font-size:0.6em;"> Username Already In Use </p>				
+					<% } %>
                  </div>
                </div>
                
@@ -49,6 +52,9 @@
     				<label for='password' class='col-sm-2 col-form-label'>Password</label>
     				<div class='col-sm-4'>
     					<input type='password' class='form-control' id='password' name='password' placeholder='****' required>
+					<% if(!password_match) { %>
+							<p style="color:red;font-size:0.6em;"> Incorect Password </p>				
+					<% } %>
     				</div>
     			</div>
     		

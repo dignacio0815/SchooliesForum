@@ -10,6 +10,7 @@ let indexRouter = require('./routes/index');
 let errorRouter = require('./routes/error');
 let loginRouter = require('./routes/login');
 let accountRouter = require('./routes/account');
+let userRouter = require('./routes/user');
 
 app.use(express.static('public'));
 app.use(express.static(__dirname + '/public'));
@@ -23,6 +24,7 @@ app.set('view engine', 'ejs');
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/account', accountRouter);
+app.use('/user/:username', userRouter);
 app.use('*', errorRouter);
 
 

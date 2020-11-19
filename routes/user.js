@@ -7,7 +7,7 @@ router.get('/', isAuthenticated, async (req, res) => {
     let data = [req.session.user];
     
     let user_info = await query(stmt, data);
-    // let user_info = "something";
+    
     
     res.render('account', { user : user_info, username_taken : false, password_match : true });
     
@@ -58,7 +58,7 @@ router.post('/', async function(req, res) {
     }
 
 
-    res.redirect('user/' + req.session.user);
+    
     
     
 });
