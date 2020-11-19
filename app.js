@@ -21,9 +21,9 @@ app.set('view engine', 'ejs');
 
 
 app.use('/', indexRouter);
-app.use('*', errorRouter);
 app.use('/login', loginRouter);
 app.use('/account', accountRouter);
+app.use('*', errorRouter);
 
 
 app.listen(port, () => {
@@ -39,7 +39,14 @@ function dbConnection() {
     })
     return conn;
 };
+
+// function isAuthenticated(req, res, next){
+//     if(!req.session.authenticated) res.redirect('/login');
+//     else next();
+// }
+
 let db = dbConnection();
+
 db.connect((err) => {
     if(err) {
         console.log('error has occurred');
@@ -47,7 +54,9 @@ db.connect((err) => {
     }
     console.log('Connected to database');
 });
+
 global.db = db;
+// global.isAuthenticated = isAuthenticated;
 
 module.exports = app;
 

@@ -1,32 +1,15 @@
 <%- include('partials/header')%>
-<<<<<<< HEAD
 
-<div class="container">
-    <form id="login" method="POST" action="/login">
-        <h1>Login</h1>
-        <br>
-        <p>
-            <label>Username:</label>
-            <input type="text" name="username">
-        </p>
-        <p>
-            <label>Password:</label>
-            <input type="password" name="password">
-        </p>
-        <p>
-            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Login</button>
-        </p>
-    </form>
-    <% if(typeof invalidLogin != 'undefined' && invalidLogin) { %>
-        <div id="invalidLogin" style="color:#ff0000" ;> Invalid Login </div>
-    <% } %>
-</div>
 
-<%- include('partials/footer') -%>
-=======
 <div class="wrapper fadeInDown">
     <div id="formContent">
         <!-- Tabs Titles -->
+
+
+        <!-- Tabs Titles -->
+        <div class="fadeIn first">
+          <img style="height:150px;width:auto;" src="/img/user.png" id="icon" alt="User Icon" />
+        </div>
 
         <!-- Login Form -->
         <form>
@@ -42,4 +25,5 @@
 
     </div>
 </div>
->>>>>>> da7396fb5e14efa583d23a59634d7d54ca05de94
+
+<%- include('partials/footer') -%>
