@@ -6,7 +6,7 @@ let port = process.env.PORT || 3000;
 
 // Router Setup
 let indexRouter = require('./routes/index');
-let errorRouter = require('./routes/error');
+//let errorRouter = require('./routes/error');
 let loginRouter = require('./routes/login');
 
 app.use(express.static('public'));
@@ -17,7 +17,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use('/', indexRouter);
-app.use('*', errorRouter);
+//app.use('*', errorRouter);
 app.use('/login', loginRouter);
 
 app.listen(port, () => {
