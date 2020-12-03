@@ -4,7 +4,6 @@ const session = require('express-session');
 var bodyParser = require('body-parser');
 const app = express();
 const mysql = require('mysql');
-const bodyParser = require('body-parser');
 let port = process.env.PORT || 3000;
 
 // Router Setup
@@ -25,6 +24,7 @@ app.use( session ({ secret: "Gimme some Cheese", resave: true, saveUninitialized
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/account', accountRouter);
