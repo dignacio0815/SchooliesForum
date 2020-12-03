@@ -20,12 +20,12 @@ router.post('/', async function(req, res, next) {
 });
 
 function validateLogin(username, password) {
-    //const db = dbConnection();
-    // db.connect(function(err) {
-    //     if (err) {
-    //         console.log('error when connecting to db:', err);
-    //     }
-    // });
+    const db = dbConnection();
+    db.connect(function(err) {
+        if (err) {
+            console.log('error when connecting to db:', err);
+        }
+    });
     let stmt = 'SELECT * FROM users WHERE username=? and password=?';
     let data = [username, password];
     return new Promise(function(resolve, reject) {
@@ -35,7 +35,7 @@ function validateLogin(username, password) {
             console.log(results);
             resolve(results);
         })
-        // db.end();
+        db.end();
     });
 };
 

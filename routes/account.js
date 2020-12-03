@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', isAuthenticated, async (req, res) => {
+router.get('/', async (req, res) => {
     
     let stmt = 'select * from USERS where USERNAME = ?';
     let data = [req.session.user];
     
-    let user_info = await query(stmt, data);
-    // let user_info = "something";
+    // let user_info = await query(stmt, data);
+    let user_info = "something";
     
     res.render('account', { user : user_info, username_taken : false, password_match : true });
     
