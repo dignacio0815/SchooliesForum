@@ -7,9 +7,16 @@ router.get('/', (req, res) => {
 
 // router.post('/', ())
 router.post('/', async function(req, res, next) {
-    let userLoggedIn = await validateLogin(req.body.username, req.body.password);
+    
+    let stmt = 'SELECT * FROM Users WHERE username=? and password=?';
+    
+    console.log(req.body.username);
+    
+    let data = [req.body.username, req.body.password];
+    
+    let userLoggedIn = await query(stmt,data);
+    
     console.log(userLoggedIn);
-    console.log();
     if(userLoggedIn.length) {
         req.session.authenticated = true;
         req.session.user = req.body.username;
@@ -38,5 +45,16 @@ function validateLogin(username, password) {
         db.end();
     });
 };
+
+function query(stmt, data) {
+    return new Promise(function(resolve, reject) {
+        db.query(stmt, data, function(error, result) {
+            if (error) throw error;
+            
+            resolve(result);
+        });
+    });
+}
+
 
 module.exports = router;

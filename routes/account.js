@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/', isAuthenticated, async (req, res) => {
     
     let stmt = 'select * from USERS where USERNAME = ?';
     let data = [req.session.user];

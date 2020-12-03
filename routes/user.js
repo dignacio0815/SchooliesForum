@@ -1,63 +1,23 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', isAuthenticated, async (req, res) => {
+router.get('/:username', async (req, res) => {
     
-    let stmt = 'select * from USERS where USERNAME = ?';
-    let data = [req.session.user];
+    let user_stmt = 'select * from Users where username = ?';
     
-    let user_info = await query(stmt, data);
+    let user_data = [req.params.username];
     
+    console.log(req.params.username);
     
-    res.render('account', { user : user_info, username_taken : false, password_match : true });
+    let user_details = await query(user_stmt, user_data);
+    
+    console.log(user_details[0]);
+    
+    res.render('user', { user : user_details[0] } );
     
 });
 
 router.post('/', async function(req, res) {
-    
-    let stmt = 'select * from USERS where USERNAME = ?';
-    let data = [req.session.user];
-    
-    let user_info = await query(stmt, data);
-    
-    let new_user_info = {"firstname" : req.body.firstname, "lastname" : req.body.lastname, "username" : req.body.username, "bio" : req.body.bio};
-    
-    let username_taken = await query(stmt, [new_user_info.username]);
-    
-    let u_taken = false;
-    let p_mismatch = true;
-    
-    if(req.body.password != user_info.password || (username_taken.length != 0 && username_taken.username != req.session.user) ) {
-        
-        if(username_taken.length != 0 && username_taken.username != req.session.user) {
-            
-            // res.render('account', { user : user_info, username_taken : false, password_match : false });
-            
-            u_taken = true;
-            
-        }
-        if(req.body.password != user_info.password) {
-            
-            // res.render('account', { user : new_user_info, username_taken : false, password_match : true });
-            
-            p_mismatch = false;
-    
-        }
-        
-        res.render('account', { user : new_user_info, username_taken : u_taken, password_match : p_mismatch });
-        
-    }
-    else {
-        
-        let update_stmt = "update USERS set firstname = ?, lastname = ?, username = ?, bio = ? where USERNAME = ?";
-        
-        await query(update_stmt, [new_user_info.firstname, new_user_info.lastname, new_user_info.username, new_user_info.bio, req.session.user]);
-        
-        req.session.user = new_user_info.username;
-        
-    }
-
-
     
     
     
