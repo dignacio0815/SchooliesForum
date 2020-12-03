@@ -2,11 +2,12 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const mysql = require('mysql');
+const bodyParser = require('body-parser');
 let port = process.env.PORT || 3000;
 
 // Router Setup
 let indexRouter = require('./routes/index');
-// let errorRouter = require('./routes/error');
+let errorRouter = require('./routes/error');
 let loginRouter = require('./routes/login');
 let createPostRouter = require('./routes/createPost');
 
@@ -17,10 +18,11 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(bodyParser.urlencoded({extended: true}));
 app.use('/', indexRouter);
-//app.use('*', errorRouter);
 app.use('/login', loginRouter);
 app.use('/createPost', createPostRouter);
+app.use('*', errorRouter);
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
