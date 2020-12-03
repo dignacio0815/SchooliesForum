@@ -25,7 +25,7 @@ router.post('/', async function(req, res, next) {
     if(userLoggedIn.length) {
         req.session.authenticated = true;
         req.session.user = req.body.username;
-        res.redirect("/landingPage");
+        res.redirect("landingPage");
         return;
     }
     res.render('login', {invalidLogin:true});
