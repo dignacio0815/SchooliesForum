@@ -15,6 +15,7 @@ let userRouter = require('./routes/user');
 let createPostRouter = require('./routes/createPost');
 let registerRouter = require('./routes/register');
 let landingPageRouter = require('./routes/landingPage');
+let logoutRouter = require('./routes/logout');
 
 app.use(express.static('public'));
 app.use(express.static(__dirname + '/public'));
@@ -33,6 +34,7 @@ app.use('/user', userRouter);
 app.use('/createPost', createPostRouter);
 app.use('/register', registerRouter);
 app.use('/landingPage', landingPageRouter);
+app.use('/logout', logoutRouter);
 app.use('*', errorRouter);
 
 app.listen(port, () => {
