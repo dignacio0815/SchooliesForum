@@ -21,7 +21,7 @@ router.post('/', async function(req, res, next) {
 //     let password = req.body['login'][1];
 //     let userLoggedIn = await validateLogin(username, password);
 
-    console.log(userLoggedIn);
+    console.log(userLoggedIn, "hmmmm");
     if(userLoggedIn.length) {
         req.session.authenticated = true;
         req.session.user = req.body.username;

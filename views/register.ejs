@@ -19,15 +19,32 @@
             <label>Password: </label>
             <input type = "text" placeholder="Enter Password" name="password">
         </p>
-        <p>
-            <label for="University">Pick University</label>
-            <select name="university" id="university">
-                <option value="Freshman">Freshman</option>
-                <option value="Sophomore">sophomore</option>
-                <option value="Junior">Junior</option>
-                <option value="Senior">Senior</option>
-            </select>
-        </p>
+        <!--<p>-->
+        <!--    <label for="University">Pick University</label>-->
+        <!--    <select name="university" id="university">-->
+        <!--        <option value="Freshman">Freshman</option>-->
+        <!--        <option value="Sophomore">sophomore</option>-->
+        <!--        <option value="Junior">Junior</option>-->
+        <!--        <option value="Senior">Senior</option>-->
+        <!--    </select>-->
+        <!--</p>-->
+          <div class="container my-4">
+
+    <p class="font-weight-bold">Choose College / University</p>
+    
+    <select class="mdb-select md-form" searchable="Search here..">
+  <option value="" disabled selected>Choose your country</option>
+  
+  <% schools.forEach(function(s) { %>
+  
+    <option value="<%= s.name %>"><%= s.name %></option>
+  
+  <% }) %>
+ 
+</select>
+
+  </div>
+        
         <p>
             <label for="Grade">Pick Grade</label>
             <select name="grade" id="sGrade">
