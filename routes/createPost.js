@@ -5,18 +5,19 @@ router.get('/', (req, res) => {
     res.render('createPost');
 });
 
-router.post('/', (req, res) => {
+router.post('/', async function(req, res, next) {
     var title = req.body['title'];
     var description = req.body['post'];
     var username = req.session.user;
-    // var userId = getUserId(username);
-    insertPost(title, description);
+    var userId = await getUserId(username);
+    var filteredUserId = userId[0]['userID'];
+    insertPost(title, description, filteredUserId);
     res.redirect('/landingPage')
 });
 
-function insertPost(title, description) {
-    var stmt = 'INSERT into Posts (name, description) VALUES (?, ?)';
-    var data = [title, description];
+function insertPost(title, description, userID) {
+    var stmt = 'INSERT into Posts (name, description, userID) VALUES (?, ?, ?)';
+    var data = [title, description, userID];
     db.query(stmt, data, function(error, result) {
         if (error) throw error;
         return result;
@@ -24,12 +25,14 @@ function insertPost(title, description) {
 }
 
 function getUserId(username) {
-    var stmt = 'select userID from Users (usernname) VALUES (?)';
+    var stmt = 'select userID from Users where username=?';
     var data = [username];
-    db.query(stmt, data, function (error, result) {
-        if (error) throw error;
-        console.log(result);
-        return result;
+    return new Promise(function (resolve, reject) {
+        db.query(stmt, data, function (error, result) {
+            if (error) throw error;
+            resolve(result)
+        })
     })
-}
+};
+
 module.exports = router;
