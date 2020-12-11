@@ -61,5 +61,25 @@
     </div>
     <!-- /.row -->
 
+    <div class="inner-main-body p-2 p-sm-3 collapse forum-content show">
+        <% for (var i = 0; i < data.length; i++) { %>
+        <div class="card mb-2">
+            <div class="card-body p-2 p-sm-3">
+                <div class="media forum-item">
+                    <a href="#" data-toggle="collapse" data-target=".forum-content"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-circle" width="50" alt="User" /></a>
+                    <div class="media-body">
+                        <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body"><%= data[i]['name']%></a></h6>
+                        <p class="text-secondary">
+                            <%= data[i]['description']%>
+                        </p>
+                        <p class="text-muted"><a href="javascript:void(0)"><%= data[i]['name']%></a> replied <span class="text-secondary font-weight-bold">13 minutes ago</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <% } %>
+
+    </div>
+
 </div>
 <!-- /.container -->
