@@ -19,10 +19,6 @@ router.post("/", function(req, res) {
     let lName = req.body.lName;
     let university = req.body.university;
     let grade = req.body.grade;
-    // console.log(fName)
-    // console.log(lName)
-    // console.log(university)
-    // console.log(grade)
     var stmt = 'INSERT into Users (username, password, firstName, lastName, university, grade) VALUES (?, ?, ?, ?, ?, ?)';
     var data = [username, password, fName, lName, university, grade];
     db.query(stmt, data, function(error, result) {
