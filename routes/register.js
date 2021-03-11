@@ -40,8 +40,8 @@ function getSchools() {
         'https://parseapi.back4app.com/classes/Usuniversitieslist_University?limit=4000&order=name',
         {
           headers: {
-            'X-Parse-Application-Id': 'ELy9Lbk60D9w1sMWlvL6uvZPYMY0UBqVRO6jizHI', // This is your app's application id
-            'X-Parse-REST-API-Key': 'y81PidZPjGeVvkHV13PTTit54jlKKu9OUauRNwTh', // This is your app's REST API key
+            'X-Parse-Application-Id': 'Kxo6yqc0xFRrir3JXuDuxCNCCrBwexwgg0HpsVT5', // This is your app's application id
+            'X-Parse-REST-API-Key': '9cI6RkUsOaRm6WGGAt2a9r1NeRgwbo45Hl7OtFwt', // This is your app's REST API key
           }
         }
       );
