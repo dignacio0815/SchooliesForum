@@ -24,7 +24,7 @@ function getUserId(username) {
 };
 
 function getPostsNotFromUser(userID) {
-    var stmt = "select * from Posts where userID != ?"
+    var stmt = "select * from Posts"
     var data = [userID];
     return new Promise(function (resolve, reject) {
         db.query(stmt, data, function (error, result) {
